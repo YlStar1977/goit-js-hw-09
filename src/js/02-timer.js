@@ -2,6 +2,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from "notiflix";
 
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -96,3 +97,30 @@ startButton.addEventListener("click", () => {
 
   startCountdown(countdown);
 });
+const styles = `
+  .timer {
+    display: flex;
+    margin-top: 50px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .value {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+`;
+
+const head = document.head || document.getElementsByTagName("head")[0];
+const styleElement = document.createElement("style");
+styleElement.appendChild(document.createTextNode(styles));
+head.appendChild(styleElement);
